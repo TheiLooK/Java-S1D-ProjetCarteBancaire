@@ -4,38 +4,38 @@ public class CarteB {
     private String codeCarte;
 
     public CarteB(String code) {
-        solde = 0;
-        découvert = 100;
-        codeCarte = code;
+        this.solde = 0;
+        this.découvert = 100;
+        this.codeCarte = code;
     }
 
     public CarteB(float montant, float decouv, String code) {
         if (montant < 0)
-            solde = 0;
+            this.solde = 0;
         else
-            solde = montant;
+            this.solde = montant;
 
         if (decouv < 0)
-            découvert = 0;
+            this.découvert = 0;
         else
-            découvert = decouv;
+            this.découvert = decouv;
 
-        codeCarte = code;
+        this.codeCarte = code;
     }
 
     public boolean etreCodeCorrect(String code) {
-        return codeCarte.equals(code);
+        return this.codeCarte.equals(code);
     }
 
     public void deposer(float montant) {
         if (montant > 0)
-            solde += montant;
+            this.solde += montant;
     }
 
     public boolean depenser(double prix, String code) {
         if (etreCodeCorrect(code)) {
-            if ((solde-prix) >= -découvert) {
-                solde -= prix;
+            if ((this.solde-prix) >= -this.découvert) {
+                this.solde -= prix;
                 return true;
             }
         }
@@ -43,14 +43,14 @@ public class CarteB {
     }
 
     public String toString() {
-        return "carteB: "+solde+" / -"+découvert;
+        return "carteB: "+this.solde+" / -"+this.découvert;
     }
 
     public float getSolde() {
-        return solde;
+        return this.solde;
     }
 
     public float getDécouvert() {
-        return découvert;
+        return this.découvert;
     }
 }
