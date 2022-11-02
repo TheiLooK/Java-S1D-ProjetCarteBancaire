@@ -23,13 +23,20 @@ public class TestCarteB {
      */
     public void test_00_Methodes() {
         CarteB carte = new CarteB("code");
+        System.out.println(carte.getSolde());
+        assertEquals("solde",0.0,carte.getSolde());
+
         CarteB carte2 = new CarteB(100,1000,"code");
         assertEquals("solde",100.0,carte2.getSolde());
 
         boolean res = carte2.etreCodeCorrect("test");
-        carte2.deposer(300);
+        assertEquals("etreCodeCorrect",false,res);
 
-        res = carte2.depenser(100.,"code");
+        carte2.deposer(300);
+        assertEquals("solde", 400.0, carte2.getSolde());
+
+        res = carte2.depenser(100, "code");
+        assertEquals("solde", 300.0, carte2.getSolde());
     }
 
     public void test_01_Methode_etreCodeCorrect() {

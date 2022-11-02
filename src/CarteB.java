@@ -35,7 +35,8 @@ public class CarteB {
     public boolean depenser(double prix, String code) {
         if (etreCodeCorrect(code)) {
             if ((this.solde-prix) >= -this.découvert) {
-                this.solde -= prix;
+                float nouveauSolde = (float) (this.solde - prix);
+                this.solde = nouveauSolde;
                 return true;
             }
         }
