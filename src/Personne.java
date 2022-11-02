@@ -31,7 +31,7 @@ public class Personne {
             return "* code incorrect";
     }
 
-    public String toString(){
+    public String toString() {
         if (this.carte == null)
             return this.nom+"(pas de carte)";
         else
