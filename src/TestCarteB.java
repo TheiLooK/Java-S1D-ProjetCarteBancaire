@@ -34,7 +34,7 @@ public class TestCarteB {
 		carte2.deposer((float) 300.);
 		assertEquals("solde", (float) 400, carte2.getSolde());
 
-		res = carte2.depenser(100.,"code");
+		carte2.depenser(100.,"code");
 		assertEquals("solde", (float) 300, carte2.getSolde());
 	}
 	public void test_01_Methode_etreCodeCorrect() {

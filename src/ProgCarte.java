@@ -1,4 +1,8 @@
 public class ProgCarte {
+    /**
+     * Main programme Carte
+     * @param args
+     */
     public static void main(String[] args) {
         // Main à écrire
         CarteB carte = new CarteB(100, 1000, "MonCode"); // 1.
